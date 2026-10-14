@@ -122,11 +122,12 @@ body {
     overflow: hidden;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     min-height: 100vh;
-    padding: 100px 32px;
+    padding: 115px 32px 65px;
 }
 
 .home::before {
@@ -142,21 +143,57 @@ body {
     opacity: 0.1;
 }
 
+/* Artist introduction */
+
+.home-intro {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    text-align: center;
+    margin: 25px auto 28px;
+}
+
+.home-logo {
+    display: block;
+    width: 190px;
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto 14px;
+}
+
+.home-role {
+    margin: 0;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+.home-location {
+    margin: 7px 0 0;
+    font-size: 12px;
+    opacity: 0.65;
+}
+
 
 /* ========================================
    5. SPOTIFY PLAYER
 ======================================== */
 
 .spotify-player {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
-    max-width: 1000px;
+    max-width: 420px;
     margin: 0 auto;
 }
 
 .spotify-player iframe {
     display: block;
     width: 100%;
-    height: 480px;
+    height: 380px;
     border: none;
     border-radius: 12px;
 }
@@ -455,7 +492,7 @@ body {
     opacity: 1;
 }
 
-/* Social links: vertical list, no arrows or dividers */
+/* Social links */
 
 .contact-editorial .contact-right {
     display: flex;
@@ -665,8 +702,32 @@ body:has(.contact-editorial) .site-credit {
         padding: 110px 20px 50px;
     }
 
+    .home-intro {
+        margin: 25px auto 22px;
+    }
+
+    .home-logo {
+        width: 155px;
+        max-width: 65%;
+        margin-bottom: 12px;
+    }
+
+    .home-role {
+        font-family: inherit;
+        font-size: 13px;
+    }
+
+    .home-location {
+        font-size: 12px;
+    }
+
+    .spotify-player {
+        width: 100%;
+        max-width: 360px;
+    }
+
     .spotify-player iframe {
-        height: 420px;
+        height: 380px;
     }
 
     /* Bio */
