@@ -1,0 +1,795 @@
+
+/* ========================================
+   1. FONT
+======================================== */
+
+@font-face {
+    font-family: "Neue Haas Grotesk Display";
+    src: url("../fonts/NeueHaasGrotDisp.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ========================================
+   2. RESET & GLOBAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #000;
+    color: #fff;
+    font-family: "Neue Haas Grotesk Display", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+
+/* ========================================
+   3. NAVIGATION
+======================================== */
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 28px 32px;
+    background: #000;
+}
+
+.navigation .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+
+    color: #fff;
+    font-size: 15px;
+    line-height: 1;
+    text-decoration: none;
+
+    transition: opacity 0.25s ease;
+}
+
+.navigation .logo:hover {
+    opacity: 0.5;
+}
+
+.navigation .logo img {
+    display: block;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+}
+
+.menu a {
+    position: relative;
+    display: inline-block;
+
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: opacity 0.25s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 1px;
+    background: #fff;
+
+    transition: width 0.25s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+
+/* ========================================
+   4. HOME
+======================================== */
+
+.home {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 100px 32px;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url("../images/home-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+}
+
+
+/* ========================================
+   5. SPOTIFY PLAYER
+======================================== */
+
+.spotify-player {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.spotify-player iframe {
+    display: block;
+    width: 100%;
+    height: 480px;
+    border: none;
+    border-radius: 12px;
+}
+
+
+/* ========================================
+   6. BIO PAGE
+======================================== */
+
+.bio-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 120px 40px 80px;
+}
+
+.bio-container {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    align-items: center;
+    gap: 70px;
+
+    width: 100%;
+    max-width: 900px;
+}
+
+.bio-image {
+    width: 300px;
+}
+
+.bio-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.bio-text {
+    max-width: 500px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.bio-text p {
+    margin-bottom: 24px;
+}
+
+.bio-text p:last-child {
+    margin-bottom: 0;
+}
+
+.bio-credit {
+    margin-top: 40px;
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: 0.55;
+}
+
+
+/* ========================================
+   7. RELEASES PAGE
+======================================== */
+
+.releases-page {
+    min-height: 100vh;
+    padding: 115px 40px 80px;
+}
+
+.releases-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    column-gap: 36px;
+    row-gap: 50px;
+
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.release {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    min-width: 0;
+    padding: 0;
+    border: none;
+}
+
+.release-player {
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+}
+
+.release-player iframe {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 520px;
+    border: none;
+    background: #000;
+}
+
+.release-info {
+    min-width: 0;
+}
+
+.release-info h2 {
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.release-info p {
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.5;
+    opacity: 0.6;
+}
+
+.release-info p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   8. COLLABS PAGE
+======================================== */
+
+.collabs-page {
+    min-height: 100vh;
+    padding: 115px 40px 80px;
+}
+
+.collabs-list {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.collab {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 24px 0;
+    border: none;
+}
+
+.collab-info {
+    min-width: 0;
+}
+
+.collab-role {
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    opacity: 0.6;
+}
+
+.collab-info h2 {
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.collab-info h2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.collab-info h2 a:hover {
+    opacity: 0.6;
+}
+
+.collab-details {
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    opacity: 0.6;
+}
+
+.collab-details:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ========================================
+   9. LEGACY CONTACT CLASSES
+======================================== */
+
+.contact-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 120px 25px 60px;
+}
+
+.contact-content {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.contact-heading {
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.6;
+}
+
+.contact-email {
+    display: inline-block;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.contact-email:hover {
+    opacity: 0.6;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 45px;
+}
+
+.contact-links a {
+    color: inherit;
+    font-size: 12px;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.contact-links a:hover {
+    opacity: 1;
+}
+
+
+/* ========================================
+   10. CONTACT — EDITORIAL LAYOUT
+======================================== */
+
+.contact-editorial {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr;
+    align-items: center;
+    column-gap: 80px;
+
+    width: calc(100% - 100px);
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 140px 0 80px;
+}
+
+.contact-left {
+    justify-self: center;
+}
+
+.contact-left h1 {
+    margin: 0 0 28px;
+    font-size: clamp(26px, 3vw, 42px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+}
+
+.contact-editorial .contact-email {
+    display: inline-block;
+    color: #aaa;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-editorial .contact-email span {
+    margin-left: 4px;
+}
+
+.contact-editorial .contact-email:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+/* Social links: vertical list, no arrows or dividers */
+
+.contact-editorial .contact-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: center;
+
+    width: 100%;
+    max-width: 260px;
+}
+
+.contact-editorial .contact-right a,
+.contact-editorial .contact-right a:visited,
+.contact-editorial .contact-right a:active {
+    display: block;
+    width: fit-content;
+    margin: 0 0 12px;
+    padding: 0;
+    border: none;
+
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.contact-editorial .contact-right a span {
+    display: none;
+}
+
+.contact-editorial .contact-right a:hover {
+    color: #999;
+}
+
+
+/* ========================================
+   11. MIXTAPES PAGE
+======================================== */
+
+.mixtapes-page {
+    width: min(calc(100% - 80px), 1100px);
+    margin: 0 auto;
+    padding-top: 145px;
+    padding-bottom: 100px;
+}
+
+.mixtapes-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 24px;
+    row-gap: 30px;
+}
+
+.mixtape {
+    min-width: 0;
+}
+
+.mixtape-player {
+    width: 100%;
+    line-height: 0;
+}
+
+.mixtape-player iframe {
+    display: block;
+    width: 100%;
+    height: 120px;
+    border: 0;
+}
+
+.mixtape-info {
+    margin-top: 3px;
+}
+
+.mixtape-info h2 {
+    min-height: 0;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.mixtape-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 8px;
+
+    margin-top: 0;
+    color: #999;
+    font-size: 11px;
+    line-height: 1.15;
+}
+
+.mixtape-tags span {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ========================================
+   12. SITE CREDIT
+======================================== */
+
+.site-credit {
+    width: 100%;
+    margin-top: -40px;
+    padding: 5px 20px;
+
+    color: #777;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+
+body:has(.contact-editorial) .site-credit {
+    margin-top: 0;
+}
+
+
+/* ========================================
+   13. TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+    .navigation {
+        padding: 24px 25px;
+    }
+
+    .menu {
+        gap: 16px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .releases-page {
+        padding: 110px 25px 60px;
+    }
+
+    .releases-list {
+        column-gap: 22px;
+        row-gap: 40px;
+    }
+
+    .collabs-page {
+        padding: 110px 25px 60px;
+    }
+
+    .mixtapes-page {
+        width: calc(100% - 48px);
+        padding-top: 125px;
+        padding-bottom: 80px;
+    }
+
+    .mixtapes-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 20px;
+        row-gap: 28px;
+    }
+
+    .contact-editorial {
+        width: calc(100% - 60px);
+        grid-template-columns: 1.2fr 0.8fr;
+        column-gap: 40px;
+    }
+
+    .contact-editorial .contact-left h1 {
+        font-size: clamp(26px, 3vw, 42px);
+    }
+}
+
+
+/* ========================================
+   14. MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .navigation {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .navigation .logo img {
+        width: 85px;
+    }
+
+    .menu {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    /* Home */
+
+    .home {
+        padding: 110px 20px 50px;
+    }
+
+    .spotify-player iframe {
+        height: 420px;
+    }
+
+    /* Bio */
+
+    .bio-page {
+        padding: 120px 20px 50px;
+    }
+
+    .bio-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .bio-image {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .bio-text {
+        font-size: 15px;
+    }
+
+    /* Releases */
+
+    .releases-page {
+        padding: 120px 20px 50px;
+    }
+
+    .releases-list {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 420px;
+        column-gap: 0;
+        row-gap: 38px;
+    }
+
+    .release {
+        gap: 9px;
+    }
+
+    .release-info h2 {
+        font-size: 14px;
+    }
+
+    .release-info p {
+        font-size: 11px;
+    }
+
+    /* Collabs */
+
+    .collabs-page {
+        padding: 110px 20px 50px;
+    }
+
+    .collab {
+        padding: 22px 0;
+    }
+
+    .collab-info h2 {
+        font-size: 14px;
+    }
+
+    /* Legacy contact */
+
+    .contact-page {
+        padding: 110px 20px 50px;
+    }
+
+    .contact-email {
+        font-size: 14px;
+    }
+
+    .contact-links {
+        gap: 20px;
+        margin-top: 35px;
+    }
+
+    /* Editorial contact */
+
+    .contact-editorial {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 45px;
+
+        width: calc(100% - 36px);
+        min-height: 100vh;
+        padding: 120px 0 70px;
+    }
+
+    .contact-editorial .contact-left {
+        justify-self: start;
+    }
+
+    .contact-editorial .contact-left h1 {
+        font-size: clamp(28px, 7vw, 38px);
+    }
+
+    .contact-editorial .contact-email {
+        font-size: 15px;
+    }
+
+    .contact-editorial .contact-right {
+        justify-self: start;
+        width: 100%;
+        max-width: none;
+    }
+
+    .contact-editorial .contact-right a {
+        font-size: 14px;
+    }
+
+    /* Mixtapes */
+
+    .mixtapes-page {
+        width: calc(100% - 36px);
+        padding-top: 110px;
+        padding-bottom: 60px;
+    }
+
+    .mixtapes-list {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 25px;
+    }
+
+    .mixtape-info h2 {
+        font-size: 15px;
+    }
+}
