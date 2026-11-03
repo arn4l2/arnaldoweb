@@ -854,3 +854,57 @@ body:has(.contact-editorial) .site-credit {
         font-size: 15px;
     }
 }
+
+
+/* ========================================
+   15. ROUNDED CORNERS — RELEASES & PRESS
+======================================== */
+
+/* Bandcamp players */
+
+.releases-page .release-player {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.releases-page .release-player iframe {
+    border-radius: 12px;
+}
+
+/* Juno review banners */
+
+.releases-page .release-info > a {
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.releases-page .release-info img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* Instagram embed */
+
+.releases-page .instagram-media {
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+
+/* ========================================
+   16. ROUNDED CORNERS — MIXTAPES
+======================================== */
+
+.mixtapes-page .mixtape-player {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.mixtapes-page .mixtape-player iframe {
+    border-radius: 12px;
+}
+
