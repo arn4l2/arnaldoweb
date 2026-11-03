@@ -857,10 +857,10 @@ body:has(.contact-editorial) .site-credit {
 
 
 /* ========================================
-   15. ROUNDED CORNERS — RELEASES & PRESS
+   15. ROUNDED CORNERS — RELEASES, PRESS & MIXTAPES
 ======================================== */
 
-/* Bandcamp players */
+/* RELEASES — Bandcamp players */
 
 .releases-page .release-player {
     overflow: hidden;
@@ -868,18 +868,22 @@ body:has(.contact-editorial) .site-credit {
 }
 
 .releases-page .release-player iframe {
+    display: block;
     border-radius: 12px;
 }
 
-/* Juno review banners */
+/* PRESS — Juno review banners */
 
 .releases-page .release-info > a {
     display: block;
+    width: fit-content;
+    max-width: 100%;
     overflow: hidden;
     border-radius: 12px;
+    line-height: 0;
 }
 
-.releases-page .release-info img {
+.releases-page .release-info > a img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -887,24 +891,28 @@ body:has(.contact-editorial) .site-credit {
     border-radius: 12px;
 }
 
-/* Instagram embed */
+/* PRESS — Instagram */
 
 .releases-page .instagram-media {
+    overflow: hidden !important;
     border-radius: 12px !important;
-    overflow: hidden;
+    max-width: 540px !important;
+    width: 100% !important;
+    margin: 1px auto !important;
 }
 
-
-/* ========================================
-   16. ROUNDED CORNERS — MIXTAPES
-======================================== */
+/* MIXTAPES — SoundCloud & Mixcloud players */
 
 .mixtapes-page .mixtape-player {
+    width: 100%;
     overflow: hidden;
     border-radius: 12px;
+    line-height: 0;
 }
 
 .mixtapes-page .mixtape-player iframe {
+    display: block;
+    width: 100%;
+    border: 0;
     border-radius: 12px;
 }
-
